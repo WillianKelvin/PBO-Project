@@ -47,7 +47,13 @@ public class Tembereng extends Lingkaran{
         double hasilVolumeBola = (Math.PI*4*jari/3);     
         return hasilVolumeBola;
     }
-    
+    public double VolumeTembereng3D (double r, double t){
+        double jari=r*r*r;
+        double hasilVolumeBola = (Math.PI*4*jari/3); 
+        double tinggi = t*t;
+        double hasilVolumeTembereng = ( hasilVolumeBola - ((Math.PI*tinggi)/3) * (3*r - t));
+        return hasilVolumeTembereng;
+    }
     
    
     
