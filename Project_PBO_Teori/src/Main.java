@@ -48,6 +48,8 @@ public class Main {
                         case '1':
                             System.out.print("Masukkan Besar sudut : ");   
                             Sudut=input.nextDouble();
+                            System.out.print("Masukkan Jarak Pusat : ");
+                            double jarakpusat = input.nextDouble();
                             Tembereng tembereng=new Tembereng(jari);
                             System.out.println("\n====TEMBERENG 2D=====");
                             System.out.println("Panjang Busur = "+tembereng.panjangBusur(Sudut, jari));
@@ -56,10 +58,9 @@ public class Main {
                             System.out.println("\n:::::Bangun Ruang:::::");
                             System.out.println(":::::LEVEL 3:::::");
                             System.out.println("====TUMBERENG 3D=====");
-                            System.out.print("Masukkan Jarak Pusat : ");
-                            double jarakpusat = input.nextDouble();
+                            Tembereng3D tembereng3 = new Tembereng3D(jari,jarakpusat);
                             System.out.println("Luas Permukaan = ");
-                            System.out.println("Volume         = "+tembereng.VolumeTembereng3D(jari, jarakpusat));
+                            System.out.println("Volume         = "+tembereng3.VolumeTembereng3D(jari, jarakpusat));
                             break;
                         case '2':
                             System.out.print("Masukkan Besar sudut : ");   
