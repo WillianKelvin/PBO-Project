@@ -4,6 +4,8 @@ import BangundatarDanRuang.Kerucut;
 import BangundatarDanRuang.Lingkaran;
 import BangundatarDanRuang.Tabung;
 import BangundatarDanRuang.Tembereng;
+import BangundatarDanRuang.Tembereng3D;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -27,6 +29,7 @@ public class Main {
         Double Sudut;
         char kembali,menu2,menu3;
         do {
+            try{
             System.out.print("Masukkan Jari-jari : ");    
             jari=input.nextDouble();
             Lingkaran lingkaran=new Lingkaran(jari);
@@ -34,7 +37,7 @@ public class Main {
             System.out.println(":::::MENU:::::");
             System.out.println("1. Bangun Datar");
             System.out.println("2. Bangun Ruang");
-            System.out.println("Silahkan Pilih : ");
+            System.out.print("Silahkan Pilih : ");
             menu = input.nextInt();
             switch (menu) {
                 case 1:
@@ -43,6 +46,7 @@ public class Main {
                     System.out.println("1. Tembereng 2D");
                     System.out.println("2. Juring 2D");
                     System.out.println("3. Busur");
+                    System.out.print("Silahkan Pilih : ");
                     menu2=input.next().charAt(0);
                     switch(menu2){
                         case '1':
@@ -96,6 +100,7 @@ public class Main {
                     System.out.println("1. Bola");
                     System.out.println("2. Kerucut");
                     System.out.println("3. Tabung");
+                    System.out.print("Silahkan Pilih : ");
                     menu3=input.next().charAt(0);
                     switch(menu3){
                         case '1':
@@ -137,7 +142,11 @@ public class Main {
                     }
                     break;
             }
-            System.out.println("Kembali ke menu? <y/n> : ");
+            } catch (InputMismatchException e){
+                    System.err.println("Input berupa angka!");
+                     input.nextLine();
+                }
+            System.out.print("Kembali ke menu? <y||n> : ");
             kembali = input.next().charAt(0);
         } while (kembali == 'y' || kembali == 'Y');
 
